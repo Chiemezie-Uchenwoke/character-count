@@ -48,6 +48,8 @@ post.addEventListener("click", () => {
 
     post.style.display = "none";
     postElement.style.display = "block";
+    textarea.style.height = "6rem"
+    postElement.style.height = "20rem";
     
     if (numberOfCharacters === 0){
         updateCharacterCount.textContent = "";
