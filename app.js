@@ -31,8 +31,9 @@ textarea.addEventListener("input", () => {
     
 
   textarea.style.height = "6rem";  // Reset the height
-//   textarea.style.height = textarea.scrollHeight + "px"; 
-
+  textarea.style.height = textarea.scrollHeight + "px"; 
+  postElement.style.height = "20rem";
+  postElement.style.height = postElement.scrollHeight + "px"; 
 });
 
 // Close and Post Events
