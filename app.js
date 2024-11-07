@@ -4,6 +4,9 @@ const maximumChar = 100;
 const close = document.getElementById("close");
 const post = document.getElementById("post");
 const postElement = document.getElementById("parent");
+const dateElement = document.getElementById("date");
+
+dateElement.innerText = new Date().toString().slice(0, 15);
 
 textarea.addEventListener("input", () => {
     let numberOfCharacters = textarea.value.length;    
