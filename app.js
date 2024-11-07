@@ -1,6 +1,9 @@
 const textarea = document.getElementById('word-count');
 let updateCharacterCount = document.getElementById("update-char");
 const maximumChar = 100;
+const close = document.getElementById("close");
+const post = document.getElementById("post");
+const postElement = document.getElementById("parent");
 
 textarea.addEventListener("input", () => {
     let numberOfCharacters = textarea.value.length;    
@@ -12,6 +15,10 @@ textarea.addEventListener("input", () => {
 
     else if (numberOfCharacters === 200){
         textarea.value = textarea.value.slice(201, textarea.value.length);
+    }
+
+    else if (numberOfCharacters === 0){
+        updateCharacterCount.textContent = "";
     }
     
     else {
@@ -26,10 +33,6 @@ textarea.addEventListener("input", () => {
 });
 
 // Close and Post Events
-const close = document.getElementById("close");
-const post = document.getElementById("post");
-const postElement = document.getElementById("parent");
-
 close.addEventListener("click", () => {
     postElement.style.display = "none";
     post.style.display = "block";
@@ -41,6 +44,11 @@ post.addEventListener("click", () => {
 
     post.style.display = "none";
     postElement.style.display = "block";
-    updateCharacterCount.textContent = (maximumChar - numberOfCharacters) + " Characters left";
-    updateCharacterCount.style.color = "#1fb7f3";
+    
+    if (numberOfCharacters === 0){
+        updateCharacterCount.textContent = "";
+    } else {
+        updateCharacterCount.textContent = (maximumChar - numberOfCharacters) + " Characters left";
+        updateCharacterCount.style.color = "#1fb7f3";
+    }
 });
