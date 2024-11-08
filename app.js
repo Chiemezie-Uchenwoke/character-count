@@ -1,6 +1,6 @@
 const textarea = document.getElementById('word-count');
 let updateCharacterCount = document.getElementById("update-char");
-const maximumChar = 100;
+const maximumChar = 130;
 const close = document.getElementById("close");
 const post = document.getElementById("post");
 const postElement = document.getElementById("parent");
@@ -11,7 +11,7 @@ dateElement.innerText = new Date().toString().slice(0, 15);
 textarea.addEventListener("input", () => {
     let numberOfCharacters = textarea.value.length;    
 
-    if (numberOfCharacters > 100){
+    if (numberOfCharacters > 130){
         updateCharacterCount.textContent = "You have exceeded by " + (maximumChar - numberOfCharacters);
         updateCharacterCount.style.color = "#ff2424";
     } 
